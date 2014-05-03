@@ -1,0 +1,2 @@
+module FinancialInstrumentsHelper
+end
