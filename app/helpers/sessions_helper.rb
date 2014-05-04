@@ -23,7 +23,6 @@ module SessionsHelper
   # Ensures access to create/edit functions on if signed in.
   def signed_in_user
     unless signed_in?
-      puts "I made it to signed in user"
       # If not signed in, save current location in session object
       # to be able to redirect after successful sign in.
       session[:return_to] = request.url
@@ -34,7 +33,11 @@ module SessionsHelper
 
   # signs out user by deleting @current_user and session cookie
   def sign_out
+    puts signed_in?
     @current_user = nil
+    self.current_user = nil
+    puts signed_in?
+    puts @current_user
     cookies.delete(:remember_token)
   end
 

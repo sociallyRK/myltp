@@ -14,14 +14,21 @@
         </ul>
       <% end %>
 
-      <%= f.label :name %>
-      <%= f.text_field :name %>
+      <%= f.label :first_name %>
+      <%= f.text_field :first_name %>
+
+      <%= f.label :last_name %>
+      <%= f.text_field :last_name %>
 
       <%= f.label :email %>
       <%= f.text_field :email %>
 
+      <%= f.label :personal_income %>
+      <%= f.password_field :personal_income %>
+
       <%= f.label :password %>
       <%= f.password_field :password %>
+
 
       <%= f.label :password_confirmation, "Confirmation" %>
       <%= f.password_field :password_confirmation %>
@@ -30,3 +37,4 @@
     <% end %>
   </div>
 </div>
+

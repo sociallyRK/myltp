@@ -11,12 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140504005426) do
+ActiveRecord::Schema.define(version: 20140504154637) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "financial_instruments", force: true do |t|
+  create_table "financialinstruments", force: true do |t|
     t.string   "instrument_type"
     t.string   "instrument_sub"
     t.integer  "amount"
@@ -25,23 +25,23 @@ ActiveRecord::Schema.define(version: 20140504005426) do
     t.datetime "updated_at"
   end
 
-  add_index "financial_instruments", ["user_id"], name: "index_financial_instruments_on_user_id", using: :btree
+  add_index "financialinstruments", ["user_id"], name: "index_financialinstruments_on_user_id", using: :btree
 
-  create_table "real_estates", force: true do |t|
+  create_table "realestates", force: true do |t|
     t.string   "zipaddress"
     t.string   "zipcity"
     t.integer  "zipcode"
     t.integer  "zipid"
     t.integer  "zestimate"
     t.string   "zillow_link"
-    t.integer  "financial_instrument_id"
+    t.integer  "financialinstrument_id"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "real_estates", ["financial_instrument_id"], name: "index_real_estates_on_financial_instrument_id", using: :btree
-  add_index "real_estates", ["user_id"], name: "index_real_estates_on_user_id", using: :btree
+  add_index "realestates", ["financialinstrument_id"], name: "index_realestates_on_financialinstrument_id", using: :btree
+  add_index "realestates", ["user_id"], name: "index_realestates_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email"

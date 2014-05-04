@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      flash[:success] = "Welcome to the Cook Book app!"
+      flash[:success] = "Welcome to the My Long Term Plan App!"
       sign_in @user
       redirect_to @user
     else
@@ -27,7 +27,7 @@ class UsersController < ApplicationController
 
   private
     def user_params
-      params.require(:user).permit(:name, :email, :password, :password_confirmation)
+      params.require(:user).permit(:first_name, :last_name, :birthday, :personal_income, :spouse_name, :birthdate, :spouse_income, :email, :password, :password_confirmation)
     end
 end
 

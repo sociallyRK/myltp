@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  resources :financial_instruments, :real_estates, :users, :sessions
-  root to: 'financial_instruments#index'
+  resources :financialinstruments, :real_estates, :users, :sessions
+  root to: 'financialinstruments#index'
   get '/signup', to: 'users#new'
   delete '/signout', to: 'sessions#destroy'
   get'/signin', to: 'sessions#new'
