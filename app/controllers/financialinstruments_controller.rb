@@ -14,7 +14,7 @@ class FinancialinstrumentsController < ApplicationController
 
   def create
     puts "I am in create"
-    financialinstrument = Financialinstrument.new financialinstrument_params
+    financialinstrument = Financialinstrument.create(financialinstrument_params)
     if financialinstrument.save
       redirect_to financialinstrument
     else
@@ -32,9 +32,7 @@ class FinancialinstrumentsController < ApplicationController
   end
 
   def edit
-    puts "in edit"
-    financialinstrument = Financialinstrument.find(params[:id])
-    puts "out of edit"
+    @financialinstrument = Financialinstrument.find(params[:id])
   end
 
   def update
@@ -51,11 +49,7 @@ class FinancialinstrumentsController < ApplicationController
 
   private
     def financialinstrument_params
-      puts "I am in params"
       params.require(:financialinstrument).permit(:instrument_type, :instrument_sub, :amount)
-      puts "Params Inspect"
-      params.inspect
-      puts "i am leaving params"
     end
 end
 

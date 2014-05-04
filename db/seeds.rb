@@ -5,3 +5,14 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+# financialinstrument = Financialinstrument.create([
+#   {
+#     first_name: Rahul, last_name: Khanna, personal_income: 100000, spouse_name: , :birthdate, :spouse_income, :email, :password, :password_confirmation
+#   ])
+
+# ingredients = Ingredient.create([
+#   {name: "Salt", brand: "Sea"},
+#   {name: "Pepper", brand: "Bell"},  
+#   {name:¬˚
+#   ])
