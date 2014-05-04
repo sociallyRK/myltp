@@ -1,0 +1,16 @@
+<%= form_for @financial_instrument do |f| %>
+  <%= f.label :instrument_type%>
+  <%= f.text_field :name, :autofocus => true %>
+  <br>
+  <%= f.label :instrument_sub %>
+  <%= f.text_field :course %>
+  <br>
+  <%= f.label :amount %>
+  <%= f.text_field :cooktime %>
+  <br>
+  <p>
+  <%= f.submit  class: "btn btn-primary" %>
+<% end %>
+
+
+

@@ -1,0 +1,13 @@
+<%= form_for @ingredient do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, :autofocus => true %>
+  <br>
+  <%= f.label :brand %>
+  <%= f.text_field :brand %>
+  <br>
+  <%= f.label :image %>
+  <%= f.text_field :image %>
+  <br>
+  <p><p>
+  <%= f.submit class: "btn btn-primary" %>
+<% end %>

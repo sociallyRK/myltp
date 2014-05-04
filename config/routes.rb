@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  resources :financial_instruments, :real_estates, :users, :sessions
+  root to: 'financial_instruments#index'
+  get '/signup', to: 'users#new'
+  delete '/signout', to: 'sessions#destroy'
+  get'/signin', to: 'sessions#new'
+end  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -53,4 +59,4 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-end
+

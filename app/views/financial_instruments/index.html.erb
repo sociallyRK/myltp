@@ -1,0 +1,18 @@
+<ul class="nav nav-pills">
+  <li>
+    <%= link_to('New Financial Instrument', new_financial_instrument_path) %>
+  </li>
+</ul>
+
+
+<% @financialinstruments.each do |financial_instrument| %>
+  <div class="row">
+     <div class="col-md-4 col-sm-4">
+      <p class="lead"><%= link_to(financial_instrument.name, financial_instrument) %>
+      <p><%= financial_instrument.instrument_type %>
+      <p><%= financial_instrument.instrument_sub %>
+      <p><%= financail_instrument.amount %>
+    </div>
+  </div>
+<% end %>
+

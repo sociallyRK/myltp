@@ -33,7 +33,7 @@ group :production do
 end
 
 
-
+gem 'binding_of_caller'
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 
