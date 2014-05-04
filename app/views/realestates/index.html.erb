@@ -1,0 +1,20 @@
+
+<ul class="nav nav-pills">
+  <li>
+    <%= link_to('New Real Estate Property', new_realestate_path) %>
+  </li>
+</ul>
+
+
+<% @realestates.each do |realestate| %>
+  <div class="row">
+     <div class="col-md-4 col-sm-4">
+      <p class="lead"><%= link_to(realestate.address, financialinstrument) %>
+      <p><%= realestate.zipaddress %>
+      <p><%= realestate.zipcity %>
+      <p><%= realestate.zipcode%>
+      <p><%= realestate.zestimate%>
+    </div>
+  </div>
+<% end %>
+

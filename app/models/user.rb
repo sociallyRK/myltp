@@ -16,8 +16,8 @@ class User < ActiveRecord::Base
   validates :password, presence: true, length: { minimum: 6 }
   validates :password_confirmation, presence: true
 
-  has_many :financialinstruments
-  has_many :real_estates
+  has_many :financialinstruments, dependent: :destroy
+  has_many :real_estates, dependent: :destroy
 
   private
     def create_remember_token

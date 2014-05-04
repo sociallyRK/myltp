@@ -1,0 +1,18 @@
+<%= form_for @realestate do |f| %>
+  <%= f.label :zipaddress%>
+  <%= f.text_field :zipaddress, :autofocus => true %>
+  <br>
+  <p>
+  <%= f.label :zipcity%>
+  <%= f.text_field :zipcity, :autofocus => true %>
+  <br>
+  <p>
+  <%= f.label :zipcode%>
+  <%= f.text_field :zipcode, :autofocus => true %>
+  <br>
+  <p>
+  <%= f.submit  class: "btn btn-primary" %>
+<% end %>
+
+
+
