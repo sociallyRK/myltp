@@ -27,11 +27,6 @@ gem 'pry'
 gem 'better_errors'
 gem 'xml-simple'
 
-#Heroku setup
-group :production do
-  gem 'rails_12factor'
-end
-
 
 gem 'binding_of_caller'
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
@@ -46,6 +41,11 @@ end
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
+
+#Heroku setup
+group :production do
+  gem 'rails_12factor'
+end
 
 # Use unicorn as the app server
 # gem 'unicorn'

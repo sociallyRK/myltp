@@ -15,5 +15,5 @@
 /log/*.log
 /tmp
 
-#Ignore .evn files so that secrets are not shown
+#Ignore .env files so that secrets are not shown
  .env 

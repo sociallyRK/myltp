@@ -6,6 +6,7 @@ class RealestatesController < ApplicationController
 
   def index
     @realestates= Realestate.all
+    key = ENV['TWITTER_KEY']
   end
 
   def new

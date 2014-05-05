@@ -8,7 +8,7 @@
       <td><%= realestate.zipcity %>
       <td><%= realestate.zipcode %>
       <td><%= realestate.zestimate %>
-      <td><%  realestate.zillow_link = "http://www.zillow.com/webservice/GetSearchResults.htm?zws-id=X1-ZWz1b7dw87o7wr_3mmvk&address=#{realestate.zipaddress}&citystatezip=#{realestate.zipcity}, CA #{realestate.zipcode}" %>
+      <td><%  realestate.zillow_link = "http://www.zillow.com/webservice/GetSearchResults.htm?#{ENV['ZILLOW_KEY']}&address=#{realestate.zipaddress}&citystatezip=#{realestate.zipcity}, CA #{realestate.zipcode}" %>
       <td><%  realestate.save %>
       <td><%= realestate.zillow_link %>
       <td>
