@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140504154637) do
+ActiveRecord::Schema.define(version: 20140505182621) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 20140504154637) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "zipstate"
   end
 
   add_index "realestates", ["financialinstrument_id"], name: "index_realestates_on_financialinstrument_id", using: :btree
@@ -48,10 +49,10 @@ ActiveRecord::Schema.define(version: 20140504154637) do
     t.string   "password_digest"
     t.string   "first_name"
     t.string   "last_name"
-    t.datetime "birthday"
+    t.date     "birthday"
     t.integer  "personal_income"
     t.string   "spouse_name"
-    t.datetime "birthdate"
+    t.date     "spouse_birthday"
     t.integer  "spouse_income"
     t.datetime "created_at"
     t.datetime "updated_at"

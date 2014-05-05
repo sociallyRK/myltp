@@ -17,7 +17,7 @@ class User < ActiveRecord::Base
   validates :password_confirmation, presence: true
 
   has_many :financialinstruments, dependent: :destroy
-  has_many :real_estates, dependent: :destroy
+  has_many :realestates, dependent: :destroy
 
   private
     def create_remember_token

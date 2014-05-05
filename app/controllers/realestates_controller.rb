@@ -1,12 +1,11 @@
 class RealestatesController < ApplicationController
   include RealestatesHelper
 
-  before_filter :signed_in_user, only: [:create, :new, :edit, :show, :update, :destroy]
-  before_filter :check_realestates_owner, only: [:edit, :update, :destroy]
+  before_filter :signed_in_user, only: [:create, :new, :edit, :show, :update, :destroy, :index]
+  before_filter :load_instrument, only: [:show, :edit, :update, :destroy]
 
   def index
-    @realestates= Realestate.all
-    key = ENV['TWITTER_KEY']
+    @realestates = current_user.realestates
   end
 
   def new
@@ -14,18 +13,18 @@ class RealestatesController < ApplicationController
   end
 
   def create
-    realestate = Realestate.create(realestate_params)
+    realestate = current_user.realestates.create(realestate_params)
     if realestate.save
       redirect_to realestate
     else
-      flash[:error] = "The financial instrument could not be saved.  Try again"
+      flash[:error] = "The real estate property could not be saved.  Try again"
       redirect_to root_path
    end
-
   end
   # def 
-  #   require 'nokogiri'
 
+    # file = File.read("http://www.zillow.com/webservice/GetSearchResults.htm?zws-id=X1-ZWz1b7dw87o7wr_3mmvk&address=400%20Beale%20Ave&citystatezip=San%20Francisco,%20CA%2094105")
+    # xml = Nokogiri::XML(file)
 # # read and parse the old file
 # file = File.read("old.xml")
 # xml = Nokogiri::XML(file)
@@ -42,29 +41,29 @@ class RealestatesController < ApplicationController
 #   end
 
   def show
-    @realestate = Realestate.find(params[:id])
    # @real_estates = @financial_instrument.real_estates
   end
 
   def edit
-    @realestate = Realestate.find(params[:id])
   end
 
   def update
-    realestate = Realestate.find(params[:id])
-    realestate.update_attributes realestate_params
-    redirect_to(realestate)
+    @realestate.update_attributes realestate_params
+    redirect_to(@realestate)
   end
 
   def destroy
-    realestate = Realestate.find(params[:id])
-    realestate.delete
-    redirect_to(realestate_path)
+    @realestate.delete
+    redirect_to(realestates_path)
   end
 
   private
     def realestate_params
-      params.require(:realestate).permit(:zipaddress, :zipcity, :zipcode, :zipid, :zestimate, :zillow_link)
+      params.require(:realestate).permit(:zipaddress, :zipcity, :zipstate, :zipcode, :zipid, :zestimate, :zillow_link)
+    end
+    def load_instrument
+      @realestate = Realestate.find(params[:id])
+      redirect_to root_path unless @realestate.user == current_user
     end
 end
 

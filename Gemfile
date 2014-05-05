@@ -26,6 +26,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'pry'
 gem 'better_errors'
 gem 'xml-simple'
+gem 'nokogiri'
 
 
 gem 'binding_of_caller'
