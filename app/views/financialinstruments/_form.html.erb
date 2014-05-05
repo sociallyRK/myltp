@@ -1,9 +1,11 @@
 <%= form_for @financialinstrument do |f| %>
+
   <%= f.label :instrument_type%>
-  <%= f.text_field :instrument_type, :autofocus => true %>
+  <%= f.select :instrument_type, [['asset', "asset"], ['liability', "liability"], ['income', "income"]] %>
   <br>
+
   <%= f.label :instrument_sub %>
-  <%= f.text_field :instrument_sub %>
+  <%= f.select :instrument_type, [["savings account", "savings account"], ["checking account", "checking account"], ['taxable investment account', "taxable investment account"], ["IRA Account", "IRA Account"]] %>
   <br>
   <%= f.label :amount %>
   <%= f.text_field :amount %>
@@ -11,6 +13,4 @@
   <p>
   <%= f.submit  class: "btn btn-primary" %>
 <% end %>
-
-
 

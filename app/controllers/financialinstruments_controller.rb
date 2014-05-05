@@ -1,8 +1,8 @@
 class FinancialinstrumentsController < ApplicationController
   include FinancialinstrumentsHelper
 
-  #before_filter :signed_in_user, only: [:create, :new, :edit, :show, :update, :destroy]
-  #before_filter :check_financialinstrument_owner, only: [:edit, :update, :destroy]
+  before_filter :signed_in_user, only: [:create, :new, :edit, :show, :update, :destroy]
+  before_filter :check_financialinstruments_owner, only: [:edit, :update, :destroy]
 
   def index
     @financialinstruments= Financialinstrument.all

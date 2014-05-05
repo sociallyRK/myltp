@@ -9,7 +9,7 @@
 <% @realestates.each do |realestate| %>
   <div class="row">
      <div class="col-md-4 col-sm-4">
-      <p class="lead"><%= link_to(realestate.address, financialinstrument) %>
+      <p class="lead"><%= link_to(realestate.zipaddress, realestate) %>
       <p><%= realestate.zipaddress %>
       <p><%= realestate.zipcity %>
       <p><%= realestate.zipcode%>
