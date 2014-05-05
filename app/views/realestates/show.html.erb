@@ -1,8 +1,9 @@
 <ul class="nav nav-pills">
-  <li><%= link_to('New Account', new_realestate_path) %></li>
-  <li><%= link_to('Edit Account', edit_realestate_path(@realestate)) %></li>
+  <li><%= link_to('New Real Estate Property', new_realestate_path) %></li>
+  <li><%= link_to('Edit Real Estate Property', edit_realestate_path(@realestate)) %></li>
+  <li><%= @realestate.zillow_link %></li>
   <li>
-  <%= link_to('Delete Account', @realestate, :method => :delete, :confirm => 'Are you sure?') %>
+  <%= link_to('Delete Real Estate Property', @realestate, :method => :delete, :confirm => 'Are you sure?') %>
 </li>
   <div class='spacer'></div>
 </ul>

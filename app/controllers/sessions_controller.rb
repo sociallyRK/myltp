@@ -14,7 +14,6 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    puts "I am in destroy"
     sign_out
     redirect_to root_url
   end

@@ -18,7 +18,7 @@ class FinancialinstrumentsController < ApplicationController
     if financialinstrument.save
       redirect_to financialinstrument
     else
-      flash[:error] = "The financial insturment could not be saved.  Try again"
+      flash[:error] = "The financial instrument could not be saved.  Try again"
       redirect_to root_path
     puts "I am leaving create"
    end

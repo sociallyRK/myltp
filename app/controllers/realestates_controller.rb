@@ -13,17 +13,32 @@ class RealestatesController < ApplicationController
   end
 
   def create
-    puts "I am in create"
     realestate = Realestate.create(realestate_params)
     if realestate.save
       redirect_to realestate
     else
       flash[:error] = "The financial instrument could not be saved.  Try again"
       redirect_to root_path
-    puts "I am leaving create"
    end
 
   end
+  # def 
+  #   require 'nokogiri'
+
+# # read and parse the old file
+# file = File.read("old.xml")
+# xml = Nokogiri::XML(file)
+
+# # replace \n and any additional whitespace with a space
+# xml.xpath("//SUPPLIER").each do |node|
+#   node.content = node.content.gsub(/\n\s+/, " ")
+# end
+
+# save the output into a new file
+# File.open("new.xml", "w") do |f|
+#   f.write xml.to_xml
+# end
+#   end
 
   def show
     @realestate = Realestate.find(params[:id])

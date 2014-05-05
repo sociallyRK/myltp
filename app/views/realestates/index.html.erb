@@ -1,20 +1,18 @@
-
-<ul class="nav nav-pills">
-  <li>
-    <%= link_to('New Real Estate Property', new_realestate_path) %>
-  </li>
-</ul>
-
-
+  <table>
 <% @realestates.each do |realestate| %>
   <div class="row">
+  <tr>
      <div class="col-md-4 col-sm-4">
-      <p class="lead"><%= link_to(realestate.zipaddress, realestate) %>
-      <p><%= realestate.zipaddress %>
-      <p><%= realestate.zipcity %>
-      <p><%= realestate.zipcode%>
-      <p><%= realestate.zestimate%>
+      <td class="lead"><%= link_to(realestate.zipaddress, realestate) %>
+      <td><%= realestate.zipaddress %>
+      <td><%= realestate.zipcity %>
+      <td><%= realestate.zipcode %>
+      <td><%= realestate.zestimate %>
+      <td><%  realestate.zillow_link = "http://www.zillow.com/webservice/GetSearchResults.htm?zws-id=X1-ZWz1b7dw87o7wr_3mmvk&address=#{realestate.zipaddress}&citystatezip=#{realestate.zipcity}, CA #{realestate.zipcode}" %>
+      <td><%  realestate.save %>
+      <td><%= realestate.zillow_link %>
+      <td>
     </div>
   </div>
 <% end %>
-
+  </table>
