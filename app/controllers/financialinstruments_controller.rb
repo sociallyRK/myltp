@@ -6,6 +6,7 @@ class FinancialinstrumentsController < ApplicationController
 
   def index
     @financialinstruments = current_user.financialinstruments
+    @finsum = Financialinstrument.sum_of_financialinstrument(current_user)
   end
 
   def new

@@ -8,6 +8,7 @@ class RealestatesController < ApplicationController
 
   def index
     @realestates = current_user.realestates
+    @realsum = Realestate.sum_of_realestate(current_user)
   end
 
   def new

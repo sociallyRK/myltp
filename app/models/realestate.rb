@@ -12,7 +12,15 @@ class Realestate < ActiveRecord::Base
     doc = Nokogiri::HTML(open(encoded_url))
     puts "doc #{doc}"
     self.zestimate = doc.css("zestimate amount")[0].children.text.to_i
-    puts "self.zestimate #{self.zestimate}"
+  end
+
+  def self.sum_of_realestate(current_user)
+    @realestates = current_user.realestates
+    sum = 0
+    @realestates.each do |realestate| 
+      sum+= realestate.zestimate
+    end
+    return sum
   end
 
 end

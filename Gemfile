@@ -27,6 +27,8 @@ gem 'pry'
 gem 'better_errors'
 gem 'xml-simple'
 gem 'nokogiri'
+gem 'bootstrap-sass', '2.3.2.0'
+gem 'sprockets', '2.11.0'
 
 
 gem 'binding_of_caller'
