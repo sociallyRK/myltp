@@ -5,7 +5,7 @@
   <br>
 
   <%= f.label :instrument_sub %>
-  <%= f.select :instrument_type, [["savings account", "savings account"], ["checking account", "checking account"], ['taxable investment account', "taxable investment account"], ["IRA Account", "IRA Account"]] %>
+  <%= f.select :instrument_sub, [["savings account", "savings account"], ["checking account", "checking account"], ['taxable investment account', "taxable investment account"], ["IRA Account", "IRA Account"]] %>
   <br>
   <%= f.label :amount %>
   <%= f.text_field :amount %>
@@ -14,3 +14,8 @@
   <%= f.submit  class: "btn btn-primary" %>
 <% end %>
 
+
+<div id="myStuff" style="display:none;">
+
+  MY STUFF
+</div>
