@@ -1,23 +1,40 @@
+		  
+$(document).ready( function () {
+		  $("#instrument_sub").hide();
+		  $("#asset select").hide();
+  		$("#liability select").hide();
+  		$("#income select").hide();
+  		$("#expense select").hide();
 
-$( document ).ready( function () {
   $("#financialinstrument_instrument_type").change(function() {
-  		("#new_financialinstrument").append($("#myStuff"));
-  		("#myStuff").append($("#new_financialinstrument"));
- 			 alert("call the do something function on option 2");
+  	  if ($(this).val() === "liability") {
+  	  $("#instrument_sub").show();
+  	 	$("#liability select").show();
+  	 	$("#asset select").hide();
+  		$("#income select").hide();
+  		$("#expense select").hide();
+  		}
+  		if ($(this).val() === "asset") {
+  		$("#instrument_sub").show();
+  		$("#liability select").hide();
+  		$("#income select").hide();
+  		$("#expense select").hide();
+  	 	$("#asset select").show();
+  		}
+  		if ($(this).val() === "income") {
+  		$("#instrument_sub").show();
+		  $("#asset select").hide();
+  		$("#liability select").hide();
+  		$("#income select").show();
+  		$("#expense select").hide();
+  		}
+  		if ($(this).val() === "expense") {
+		  $("#instrument_sub").show();
+		  $("#asset select").hide();
+  		$("#liability select").hide();
+  		$("#income select").hide();
+  	 	$("#expense select").show();
+  		}
   });
   }
 );
-
-
-// $( document ).ready( function () {
-//   $("#financialinstrument_instrument_type").change(function() {
-//     var asset_types = [{label: 'Savings', value: 'savings_account'}],{}];
-//     var liability_types = [];
-//     var income_types = [];
-
-
-//     $("#financialinstrument_instrument_sub"). // set select options
-
-//   });
-//   }
-// );

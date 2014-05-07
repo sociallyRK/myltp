@@ -2,15 +2,26 @@
 <%= form_for @financialinstrument do |f| %>
 
   <%= f.label :instrument_type%>
-  <%= f.select :instrument_type, [['asset', "asset"], ['liability', "liability"], ['income', "income"],['expenses', "expenses"]] %>
-  <br>
-
-
-<div id="myStuff" style="display:none;">
-  <%= f.label :instrument_sub %>
-  <%= f.select :instrument_sub, [["savings account", "savings account"], ["checking account", "checking account"], ['taxable investment account', "taxable investment account"], ["IRA Account", "IRA Account"], ["student loan", "student loan"], ["car loan", "car loan"], ['home loan', "home loan"], ["personal loan", "line of credit"], ["salary", "salary"], ["business", "business"], ["contract for hire", "contract for hire"], ["gift", "gift"], ["pension", "pension"],["expense"],["expense"]] %>
-  <br>
+  <div id="instrument_type">
+  <%= f.select :instrument_type, [['asset', "asset"], ['liability', "liability"], ['income', "income"],['expense', "expense"]] %>
 </div>
+<br>
+<div id="instrument_sub">
+  <%= f.label :instrument_sub %>
+  <div id="asset">
+  <%= f.select :instrument_sub, [["savings account", "savings account"], ["checking account", "checking account"], ['taxable investment account', "taxable investment account"], ["IRA Account", "IRA Account"]] %>
+  </div>
+  <div id="liability">
+  <%= f.select :instrument_sub, [["student loan", "student loan"], ["car loan", "car loan"], ['home loan', "home loan"], ["personal loan", "line of credit"]] %>
+  </div>
+  <div id="income">
+  <%= f.select :instrument_sub, [["salary", "salary"], ["business", "business"], ["contract for hire", "contract for hire"], ["gift", "gift"], ["pension", "pension"]] %>
+  </div>
+  <div id="expense">
+  <%= f.select :instrument_sub, [["rent", "rent"], ["car lease", "lease"], ["household expense", "household expense"], ["other expense", "other expense"]] %>
+  </div>
+</div>
+<br>
   <%= f.label :amount %>
   <%= f.text_field :amount %>
   <br>

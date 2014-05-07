@@ -16,7 +16,7 @@ class RealestatesController < ApplicationController
   end
 
   def create
-    realestate = current_user.realestates.create(realestate_params)
+    realestate = current_user.realestates.create realestate_params
     #zillow_link = "http://www.zillow.com/webservice/GetSearchResults.htm?#{ENV['ZILLOW_KEY']}&address=#{realestate.zipaddress}&citystatezip=#{realestate.zipcity}, #{realestate.zipstate} #{realestate.zipcode}"
     #doc = Nokogiri::HTML(open(zillow_link))
     #realestate.zestimate = doc.css("zestimate amount")[0].children.text.to_i

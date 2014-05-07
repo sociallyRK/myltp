@@ -1,12 +1,5 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="navbar-header">My LTP App</a>
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
-      <span class="icon-bar">LTP</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-  </div>
-  <div class="navbar-header navbar-right">
+  <div class="navbar-header navbar-right"> <!--this is nav bar right -->
     <% if signed_in? %>
       <p class="navbar-text">
         <%= link_to "My profile", current_user %>
@@ -23,20 +16,10 @@
       </p>
     <% end %>
   </div>
-  <div class="navbar-collapse collapse">
+  <div class="navbar-default">
     <ul class="nav navbar-nav">
-      <li><%= link_to('Financial Accounts', financialinstruments_path) %></li>
+      <li><%= link_to('My Accounts', financialinstruments_path) %></li>
+      <li><%= link_to('My Properties', realestates_path) %></li>
     </ul>
-  <ul class="nav nav-pills">
-  <li>
-    <%= link_to('New Financial Instrument', new_financialinstrument_path) %>
-  </li>
-</ul>
-  
-  <ul class="nav nav-pills">
-  <li>
-    <%= link_to('New Real Estate Property', new_realestate_path) %>
-  </li>
-</ul>
   </div>
 </nav>

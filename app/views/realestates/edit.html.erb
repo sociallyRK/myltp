@@ -1,13 +1,2 @@
 <h1>Edit Real Estate Property Info</h1>
-  <div class="row">
-  <tr>
-     <div class="col-md-4 col-sm-4">
-      <td class="lead"><%= link_to(@realestate.zipaddress, @realestate) %>
-      <td><%= @realestate.zipaddress %>
-      <td><%= @realestate.zipcity %>
-      <td><%= @realestate.zipcode%>
-      <td><%= @realestate.zipstate%>
-      <td><%= @realestate.zestimate%>
-    </div>
-  </div>
 <%= render :partial => 'form' %>

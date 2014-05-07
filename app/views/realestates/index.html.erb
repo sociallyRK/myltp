@@ -1,15 +1,12 @@
-  <table>
-<td><%= "The total sum of all properties is #{@realsum}" %>
+<h1><%= "The total sum of all properties is #{@realsum}" %></h1>
+  <table class="table table-hover">
 <% @realestates.each do |realestate| %>
-  <div class="row">
   <tr>
-     <div class="col-md-4 col-sm-4">
-      <td class="lead"><%= link_to(realestate.zipaddress, realestate) %>
-      <td><%= realestate.zipaddress %>
-      <td><%= realestate.zipcity %>
-      <td><%= realestate.zipcode %>
-      <td><%= realestate.zestimate %>
-    </div>
-  </div>
+      <td><%= link_to(realestate.zipaddress, realestate) %></td>
+      <td><%= realestate.zipaddress %></td>
+      <td><%= realestate.zipcity %></td>
+      <td><%= realestate.zipcode %></td>
+      <td><%= realestate.zestimate %></td>
+  </tr>
 <% end %>
   </table>

@@ -33,11 +33,8 @@ module SessionsHelper
 
   # signs out user by deleting @current_user and session cookie
   def sign_out
-    puts signed_in?
     @current_user = nil
     self.current_user = nil
-    puts signed_in?
-    puts @current_user
     cookies.delete(:remember_token)
   end
 

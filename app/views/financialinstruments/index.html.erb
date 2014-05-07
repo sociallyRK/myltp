@@ -1,12 +1,11 @@
-<%= "The total sum of all accounts is #{@finsum}" %>
-<% @financialinstruments.each do |financialinstrument| %>
-  <div class="row">
-     <div class="col-md-4 col-sm-4">
-      <p class="lead"><%= link_to(financialinstrument.instrument_sub, financialinstrument) %>
-      <p><%= financialinstrument.instrument_type %>
-      <p><%= financialinstrument.instrument_sub %>
-      <p><%= financialinstrument.amount %>
-    </div>
-  </div>
+<h1><%= "The total sum of all accounts is #{@finsum}" %></h1>
+<table class="table table-hover">
+<% @financialinstruments.each do |financialinstrument| %><tr>
+      <td><%= link_to(financialinstrument.instrument_sub, financialinstrument) %></td>
+      <td><%= financialinstrument.instrument_type %></td>
+      <td><%= financialinstrument.instrument_sub %></td>
+      <td><%= financialinstrument.amount %></td>
+    </tr>
 <% end %>
+</table>
 
