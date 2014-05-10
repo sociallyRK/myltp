@@ -3,7 +3,7 @@ class CreateFinancialinstruments < ActiveRecord::Migration
     create_table :financialinstruments do |t|
       t.string :instrument_type
       t.string :instrument_sub
-      t.integer :amount
+      t.decimal :amount, :precision => 8, :scale => 2
       t.references :user, index: true
 
       t.timestamps

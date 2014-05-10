@@ -5,7 +5,7 @@ class CreateRealestates < ActiveRecord::Migration
       t.string :zipcity
       t.integer :zipcode
       t.integer :zipid
-      t.integer :zestimate
+      t.decimal :zestimate, :precision => 8, :scale => 2
       t.string :zillow_link
       t.references :financialinstrument, index: true
       t.references :user, index: true

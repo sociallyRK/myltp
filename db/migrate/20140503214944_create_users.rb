@@ -10,7 +10,6 @@ class CreateUsers < ActiveRecord::Migration
       t.string :spouse_name
       t.date :spouse_birthday
       t.integer :spouse_income
-
       t.timestamps
     end
   end

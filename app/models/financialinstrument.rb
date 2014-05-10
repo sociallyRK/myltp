@@ -4,8 +4,12 @@ class Financialinstrument < ActiveRecord::Base
     @financialinstruments = current_user.financialinstruments
     sum = 0
     @financialinstruments.each do |financialinstrument| 
-    sum+= financialinstrument.amount
-    end
+      if financialinstrument.instrument_type == "asset"
+        sum+= financialinstrument.amount
+      elsif financialinstrument.instrument_type == "liability"
+        sum-= financialinstrument.amount
+      end
+      end
     return sum
   end
 end

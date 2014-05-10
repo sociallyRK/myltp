@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20140506175217) do
   create_table "financialinstruments", force: true do |t|
     t.string   "instrument_type"
     t.string   "instrument_sub"
-    t.integer  "amount"
+    t.decimal  "amount",          precision: 8, scale: 2
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20140506175217) do
     t.string   "zipcity"
     t.integer  "zipcode"
     t.integer  "zipid"
-    t.integer  "zestimate"
+    t.decimal  "zestimate",              precision: 8, scale: 2
     t.string   "zillow_link"
     t.integer  "financialinstrument_id"
     t.integer  "user_id"
@@ -57,7 +57,7 @@ ActiveRecord::Schema.define(version: 20140506175217) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "remember_token"
-    t.float    "Realestatesum",   default: 0.0
+    t.decimal  "Realestatesum",   precision: 8, scale: 2, default: 0.0
   end
 
 end

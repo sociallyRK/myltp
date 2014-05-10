@@ -1,54 +1,11 @@
 ActiveRecord::Schema.define(version: 20140506175217) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
-  create_table "financialinstruments", force: true do |t|
-    t.string   "instrument_type"
-    t.string   "instrument_sub"
-    t.integer  "amount"
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "financialinstruments", ["user_id"], name: "index_financialinstruments_on_user_id", using: :btree
-
-  create_table "realestates", force: true do |t|
-    t.string   "zipaddress"
-    t.string   "zipcity"
-    t.integer  "zipcode"
-    t.integer  "zipid"
-    t.integer  "zestimate"
-    t.string   "zillow_link"
-    t.integer  "financialinstrument_id"
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "zipstate"
-  end
-
-  add_index "realestates", ["financialinstrument_id"], name: "index_realestates_on_financialinstrument_id", using: :btree
-  add_index "realestates", ["user_id"], name: "index_realestates_on_user_id", using: :btree
-
-  create_table "users", force: true do |t|
-    t.string   "email"
-    t.string   "password_digest"
-    t.string   "first_name"
-    t.string   "last_name"
-    t.date     "birthday"
-    t.integer  "personal_income"
-    t.string   "spouse_name"
-    t.date     "spouse_birthday"
-    t.integer  "spouse_income"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "remember_token"
-    t.float    "Realestatesum",   default: 0.0
-  end
+rahul = User.create(:first_name => 'Rahul', :last_name => 'Khanna',  :email => "rahul2@gmail.com", :password => "12345", :password_confirmation => "12345", :personal_income => 100000)
+matt = User.create(:first_name => 'Matt', :last_name => 'Flannagan', :email => "matt@gmail.com", :password => "12345", :password_confirmation => "12345", :personal_income => 100000)
+zoe = User.create(:first_name => 'Zoe', :last_name => "Goldfarb", :email => "zoe@gmail.com", :password => "12345", :password_confirmation => "12345", :personal_income => 100000)
+steven = User.create(:first_name => 'Steven', :last_name => "Miller", :email => "steven@gmail.com", :password => "12345", :password_confirmation => "12345", :personal_income => 100000)
 
 end
-
 
 
 # This file should contain all the record creation needed to seed the database with its default values.

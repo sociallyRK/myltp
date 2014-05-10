@@ -1,4 +1,4 @@
-<h1><%= "The total sum of all properties is #{@realsum}" %></h1>
+<h1><%= "The total sum of all properties is #{ActionView::Base.new.number_to_currency @realsum}" %></h1>
   <table class="table table-hover">
 <% @realestates.each do |realestate| %>
   <tr>
@@ -6,7 +6,7 @@
       <td><%= realestate.zipaddress %></td>
       <td><%= realestate.zipcity %></td>
       <td><%= realestate.zipcode %></td>
-      <td><%= realestate.zestimate %></td>
+      <td><%= ActionView::Base.new.number_to_currency realestate.zestimate %></td>
   </tr>
 <% end %>
   </table>
