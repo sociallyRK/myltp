@@ -5,9 +5,9 @@ class FinancialinstrumentsController < ApplicationController
   before_filter :load_instrument, only: [:show, :edit, :update, :destroy]
 
   def index
-    @financialinstruments = current_user.financialinstruments
-    @finsum = Financialinstrument.sum_of_financialinstrument(current_user)
-    @finincome = Financialinstrument.financial_income(current_user)
+    @financialinstruments = current_user.financialinstruments.order(:amount).reverse_order
+    @financialbalancesheet = Financialinstrument.balancesheet(current_user)
+    @financialincomestatement = Financialinstrument.incomestatement(current_user)
   end
 
   def new
@@ -22,8 +22,7 @@ class FinancialinstrumentsController < ApplicationController
       flash[:error] = "The financial instrument could not be saved.  Try again"
       redirect_to root_path
    end
-    #financialinstrument = Financialinstrument.create financialinstrument_params
-    #redirect_to(financialinstrument)
+ 
   end
 
   def show

@@ -1,4 +1,4 @@
-<h1><%= "Your current account balance is #{ActionView::Base.new.number_to_currency @finsum}" %></h1>
+<h1><%= "Your current account balance is #{ActionView::Base.new.number_to_currency @financialbalancesheet}" %></h1>
 <table class="table table-hover">
 <% @financialinstruments.each do |financialinstrument| %><tr>
       <% if financialinstrument.instrument_type == "asset" || financialinstrument.instrument_type == "liability" %>
@@ -6,11 +6,13 @@
       <td><%= financialinstrument.instrument_type %></td>
       <td><%= financialinstrument.instrument_sub %></td>
       <td><%= ActionView::Base.new.number_to_currency financialinstrument.amount %></td>
+		<% end %>
     </tr>
-<% end %>
+		<% end %>
 </table>
 
-<h1><%= "Your expected monthly cash inflow is #{ActionView::Base.new.number_to_currency @finsum}" %></h1>
+
+<h1><%= "Your expected monthly cash inflow is #{ActionView::Base.new.number_to_currency @financialincomestatement}" %></h1>
 <table class="table table-hover">
 			<% @financialinstruments.each do |financialinstrument| %><tr>
       <% if financialinstrument.instrument_type == "income" || financialinstrument.instrument_type == "expense" %>
